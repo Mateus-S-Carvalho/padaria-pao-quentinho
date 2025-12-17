@@ -84,6 +84,7 @@ function Home() {
           <p className='nomeProduto'>Rosquinha de chocolate</p>
           <p className='descricao'>O doce que a Giovanna adora 😍</p>
           <p className='valor'>R$ 3,00</p>
+											<p className='Pessoa'> GOSTOSA da giovanna 🤭</p>
         </div>
       </div>
     </>
