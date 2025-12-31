@@ -10,18 +10,54 @@ import Pudding from '../../assets/custard-pudding.jpg'
 import RosquinhaDeChocolate from '../../assets/roscaDeChocolate.jpg'
 import './style.css'
 
+
 function Home() {
 
   return (
     <>
-      <div className='barraGeral'>
-        <img src={Logotipo} className='embaixo' />
-        <p>PADARIA PÃO QUENTINHO</p>
-        <input type='text' id='barraPesquisa' className='embaixo' placeholder='Pesquisa' />
-        <button type='button' className='buttonGeral'>Home</button>
-        <button type='button' className='buttonGeral'>Home</button>
-        <button type='button' className='buttonGeral'>Home</button>
-      </div>
+      <nav class="navbar bg-body-tertiary">
+
+        <div class="container-fluid">
+          {/*Logo + Texto*/}
+          <a class="navbar-brand" href="#">
+            <div className='d-flex flex-row' >
+              <img src={Logotipo} alt="Logo" width="30" height="24" class="d-inline-block align-text-top"></img>
+              <p className='fs-3' style={{ display: 'inline-block', transform: 'translateY(10px)' }}>Padaria Pão Quentinho</p>
+            </div>
+          </a>
+
+          {/** Barra de pesquisa + Botão Home */}
+          <div className='d-flex flex-row'>
+            {/** Barra de pesquisa */}
+            <form class="d-flex" role="search">
+              <input class="form-control" type="search" placeholder="Pesquisar" aria-label="Search" />
+              <button class="btn" type="submit">🔎</button>
+            </form>
+
+            {/*Botão de Home*/}
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Carrinho</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href='#'>Disabled</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </nav>
 
       <div className='hero'>
         <p className='textHero'>Pão quentinho na sua porta</p>
@@ -84,7 +120,7 @@ function Home() {
           <p className='nomeProduto'>Rosquinha de chocolate</p>
           <p className='descricao'>O doce que a Giovanna adora 😍</p>
           <p className='valor'>R$ 3,00</p>
-											<p className='Pessoa'> GOSTOSA da giovanna 🤭</p>
+          <p className='Pessoa'> GOSTOSA da giovanna 🤭</p>
         </div>
       </div>
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
