@@ -1,9 +1,12 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="style.css">
@@ -13,11 +16,13 @@
 <body>
     <div id="header">
         <div class="juncaoItens">
-            <button>
-                <img id="iconSpotify"
-                    src="https://imgs.search.brave.com/fFEi9aasPySt1rYv7V47XP63ONrEnXsrIhyU3LmSkkc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/aWNvbnM4LmNvbS9l/eHRlcm5hbC10aG9z/ZS1pY29ucy1maWxs/LXRob3NlLWljb25z/LzEyMDAvZXh0ZXJu/YWwtU3BvdGlmeS1z/b2NpYWwtbWVkaWEt/dGhvc2UtaWNvbnMt/ZmlsbC10aG9zZS1p/Y29ucy5qcGc">
-            </button>
-            <a href="index.html"><button class="material-symbols-outlined">home</button></a>
+
+            <a href="index.html">
+                <button>
+                    <img id="iconSpotify" src="image/Logotipo-folhas.png">
+                </button>
+
+            </a>
             <div id="barraPesquisa">
                 <button class="material-symbols-outlined">search</button>
                 <input type="text" placeholder="Pesquisar">
@@ -26,21 +31,38 @@
         </div>
 
         <div class="juncaoItens">
-            <button class="material-symbols-outlined">notifications</button>
-            <button class="material-symbols-outlined">groups</button>
+            <a href="#notificacao">
+                <button class="material-symbols-outlined">notifications</button>
+            </a>
+
+            <button class="material-symbols-outlined">shopping_cart</button>
             <button id="perfil"></button>
         </div>
 
     </div>
-    <a class="material-symbols-outlined" href="#teste">move_group</a>
-    <main class="pages" id="router-container">
-        <section id="teste" class="page">
-            <h1>teste</h1>
-            <label>seu teste foi um sucesso</label>
+
+<div id="hero">
+    <h1></h1>
+</div>
+
+<div id="categorias">
+    <h2 class="tenor-sans-regular">
+        Categorias
+    </h2>
+    <div id="containerCategorias" class="gridCategorias">
+
+    </div>
+</div>
+
+
+
+
+    <main id="router-container">
+        <section id="notificacao" class="pagina">
+            <h1 class="tenor-sans-regular">Essas são suas notificaões</h1>
+            <label class="tenor-sans-regular">Você não possui notificações</label>
         </section>
     </main>
 </body>
-
-
 
 </html>
