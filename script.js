@@ -6,29 +6,58 @@ const supabase = createClient(URLsupaBase, ChaveSupaBase)
 
 async function carregarCategoria (){
 
-    const {data: categorias, error} = await supabase
-        .from('categorias')
-        .select('nome, imagem_url');
+    const [resCategorias, resProdutos] = await Promise.all([
+        supabase.from('categorias').select('id, nome, imagem_url'),
+        supabase.from('produtos').select('id, nome, descricao, valor, imagem_url, categoria_id')
+    ])
+
+    const {data: categorias, error:errorCat} = resCategorias
+    const {data: produtos, error:errorProd} = resProdutos
     
-    if (error) {
-        console.error("error ao buscar as categorias: ", error);
+    if (errorCat || errorProd) {
+        console.error("error ao buscar: ", error);
         return;
     }
 
     const containerCategorias = document.getElementById('containerCategorias')
+    const containerProdutos = document.getElementById('containerProdutos') 
 
     containerCategorias.innerHTML = ''
+    containerProdutos.innerHTML = ''
 
     categorias.forEach(categoria => {
-        const card = `
-            <div class='cardCategorias'>
-                <img class="imagemCategoria" src="${categoria.imagem_url} ">
+        const cardCat = `
+            <div class='cardCategoria'>
+                <img class="imagemCategoria" src="${categoria.imagem_url}">
                 <h3 class="tenor-sans-regular">${categoria.nome}</h3>
             </div>
         `
 
-        containerCategorias.innerHTML += card;
+        containerCategorias.innerHTML += cardCat;
+    });
+
+    produtos.forEach(produto =>{
+        const preco = parseFloat(produto.valor || 0).toFixed(2);
+        const cardProd = `
+            <div class = 'cardProduto'>
+                <img class='imagemProduto' src="${produto.imagem_url}">
+                <h3 class="tenor-sans-regular nomeProduto">${produto.nome}</h1>
+                <label class="tenor-sans-regular">${produto.descricao}</label>
+                <h4 class='tenor-sans-regular'>R$ ${preco}</h4>
+                </div>
+        `
+        containerProdutos.innerHTML += cardProd
     });
 }
 
 carregarCategoria()
+
+const btnMenu = document.getElementById('btnPerfil')
+const menu = document.getElementById('menu')
+
+btnMenu.addEventListener('click', (event) =>{
+    event.stopPropagation();
+
+    menu.classList.toggle('menu-ativo');
+});
+
