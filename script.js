@@ -8,7 +8,7 @@ async function carregarCategoria (){
 
     const {data: categorias, error} = await supabase
         .from('categorias')
-        .select("*");
+        .select('nome, imagem_url');
     
     if (error) {
         console.error("error ao buscar as categorias: ", error);
@@ -22,7 +22,7 @@ async function carregarCategoria (){
     categorias.forEach(categoria => {
         const card = `
             <div class='cardCategorias'>
-                <img src="${categoria.imagem_url}">
+                <img class="imagemCategoria" src="${categoria.imagem_url} ">
                 <h3 class="tenor-sans-regular">${categoria.nome}</h3>
             </div>
         `
