@@ -1,0 +1,65 @@
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+
+    & #iconSpotify {
+        width: 5vh;
+        height: 5vh;
+    }
+
+    & #barraPesquisa {
+        display: flex;
+        align-items: center;
+        border: 1px solid black
+    }
+
+    & button:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+
+    }
+
+    button:active {
+        color: red;
+        transform: scale(1.2);
+    }
+
+    & button,
+    input {
+        border: none;
+        outline: none;
+        background-color: transparent;
+    }
+
+    & #perfil {
+        width: 3vh;
+        height: 3vh;
+        background-color: black;
+        border-radius: 10vh;
+    }
+
+    & .juncaoItens {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1vh;
+    }
+}
+
+.page {
+    display: none;
+}
+
+.page:target {
+    display: block;
+}
