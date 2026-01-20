@@ -1,0 +1,41 @@
+#telaAdmin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#exibirProduto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.cardProduto {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 5px;
+    width: 50vh;
+
+    & .imagemProduto {
+        width: 10vh;
+        height: 10vh;
+        border-radius: 20px;
+    }
+
+    & .botao {
+        display: flex;
+        margin-left: auto;
+    }
+
+    & .juncaoCard {
+        padding: 10px;
+    }
+}
