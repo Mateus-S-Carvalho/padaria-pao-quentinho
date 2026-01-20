@@ -116,7 +116,7 @@ a:visited {
 
 #containerProdutos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px,1vh));
+    grid-template-columns: repeat(auto-fill, minmax(150px,1vh));
     padding: 10px;
 
     & .cardProduto {
