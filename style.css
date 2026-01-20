@@ -115,9 +115,9 @@ a:visited {
 }
 
 #containerProdutos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1vh));
+    max-width: 100%;
     gap: 20px;
 
     & .cardProduto {
@@ -130,8 +130,8 @@ a:visited {
     }
 
     & .imagemProduto {
-        width: 200px;
-        height: 200px;
+        width: 10vh;
+        height: 10vh;
     }
 }
 
