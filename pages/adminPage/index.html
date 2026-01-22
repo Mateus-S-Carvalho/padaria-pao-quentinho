@@ -51,33 +51,68 @@
         </div>
 
     </div>
-    <h1 class="tenor-sans-regular">Adicionar usuario</h1>
-    <form id="telaAdmin">
-
-        <div class="inputs">
-            <label class="tenor-sans-regular">nome</label>
-            <input type="text" id="nome" placeholder="Nome do produto" class="tenor-sans-regular">
-        </div>
-        <div class="inputs">
-            <label class="tenor-sans-regular">Descrição</label>
-            <input type="text" id="descricao" placeholder="Descrição do produto" class="tenor-sans-regular">
-        </div>
-        <div class="inputs">
-            <label class="tenor-sans-regular">Valor</label>
-            <input type="text" id="valor" placeholder="valor do produto" class="tenor-sans-regular">
-        </div>
-        <div class="inputs">
-            <label class="tenor-sans-regular">imagem</label>
-            <input type="text" id="imagem" placeholder="URL da imagem do produto" class="tenor-sans-regular">
-        </div>
-        <div class="inputs">
-            <label class="tenor-sans-regular">Categoria</label>
-        </div>
-        <button type="submit" id="enviar">Adicionar</button>
-    </form>
-    <div id="exibirProduto">
-        
+    <div id="select">
+        <a href="#Produto">
+            <button class="tenor-sans-regular" id="btnProduto">Produto</button>
+        </a>
+        <a href="#Categoria">
+            <button class="tenor-sans-regular" id="btnCategoria">Categoria</button>
+        </a>
     </div>
+
+
+
+    <main>
+        <div id="menuProduto">
+            <div id="ajustarItens">
+                <h1 class="tenor-sans-regular">Adicionar usuario</h1>
+                <form id="telaAdmin">
+
+                    <div class="inputs">
+                        <label class="tenor-sans-regular">nome</label>
+                        <input type="text" id="nome" placeholder="Nome do produto" class="tenor-sans-regular">
+                    </div>
+                    <div class="inputs">
+                        <label class="tenor-sans-regular">Descrição</label>
+                        <input type="text" id="descricao" placeholder="Descrição do produto" class="tenor-sans-regular">
+                    </div>
+                    <div class="inputs">
+                        <label class="tenor-sans-regular">Valor</label>
+                        <input type="text" id="valor" placeholder="valor do produto" class="tenor-sans-regular">
+                    </div>
+                    <div class="inputs">
+                        <label class="tenor-sans-regular">imagem</label>
+                        <input type="text" id="imagem" placeholder="URL da imagem do produto"
+                            class="tenor-sans-regular">
+                    </div>
+                    <div class="inputs">
+                        <label class="tenor-sans-regular">Categoria</label>
+                        <div id="mostrarCheckbox">
+
+                        </div>
+                    </div>
+                    <button type="submit" id="enviar">Adicionar</button>
+                </form>
+                <div id="exibirProduto">
+
+                </div>
+            </div>
+
+        </div>
+        <div id="menuCategoria">
+            <h1 class="tenor-sans-regular">Adicionar Categoria</h1>
+            <form id="telaAdminCategoria">
+                <label class="tenor-sans-regular">Nome da Categoria: </label>
+                <input type="text" id="inputNome" placeholder="Nome da Categoria" class="tenor-sans-regular">
+                <label class="tenor-sans-regular">URL: </label>
+                <input type="text" id="inputUrl" placeholder="URL da imagem da Categoria" class="tenor-sans-regular">
+                <button type="submit" id="btnEnviarCat" class="tenor-sans-regular">Adicionar Categoria</button>
+            </form>
+            <div id="exibirCategoria">
+
+            </div>
+        </div>
+    </main>
     <script type="module" src="script.js"></script>
     <script src="../../scripts/scriptHeader.js"></script>
 
