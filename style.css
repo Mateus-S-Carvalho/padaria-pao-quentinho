@@ -4,8 +4,7 @@
     --cor-fundo-cards: #FFFAF3;
 }
 
-/* Confifuração base da pagina, retirando as "leis" pré
-estabelecidas*/
+/* Configuração base */
 * {
     margin: 0;
     padding: 0;
@@ -14,69 +13,55 @@ estabelecidas*/
     list-style: none;
 }
 
-/* Estilização do corpo da pagina */
 body {
     background-color: var(--cor-de-fundo);
     font-family: "Tenor Sans", sans-serif;
+    overflow-x: hidden; /* Evita barra de rolagem lateral no celular */
 }
 
-/* estilização de icons usando texto */
 .material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
 }
 
-/* Fonte usada no site, sendo a principal */
 .tenor-sans-regular {
     font-family: "Tenor Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-/* Retira as pré-definições dos links, tirando o azul e o sublinhado */
-a {
+a, a:visited {
     text-decoration: none;
     color: inherit;
 }
 
-/* Retira a estilização de deixar o link roxo quando visualizado */
-a:visited {
-    color: inherit;
-}
-
-/* Estilização do hero, onde sera mostrado a cara do site */
+/* Estilização do hero - Ajustado para ser responsivo */
 #hero {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 70vh;
+    height: 50vh; /* Reduzi um pouco para não cobrir a tela toda em telas pequenas */
+    min-height: 300px;
     background-color: rgb(255, 186, 75);
 }
 
-/* Div usada para alinhar os itens de acordo com o projeto do figma */
 #bodyPr {
-    padding-left: 22px;
-    padding-right: 22px;
-    padding-top: 28px;
+    padding: 28px 22px; /* Simplificação do padding */
 }
 
-/* Estilização usada para Atribuir uma cor para o texto "Categorias" */
 #txtCat {
     color: var(--cor-da-linha);
-    ;
 }
 
-/* Toda estilização do container e cards de categoria */
+/* Ajuste das Categorias para celular */
 #containerCategorias {
     display: flex;
     gap: 10px;
-    padding-left: 15px;
-    padding-top: 15px;
-
+    padding: 15px 0;
+    overflow-x: auto; /* Permite scroll lateral nas categorias se não couberem na tela do celular */
+    scrollbar-width: none; /* Esconde barra de scroll no Firefox */
+    
+    &::-webkit-scrollbar { display: none; } /* Esconde barra de scroll no Chrome/Safari */
 
     & .cardCategoria {
         display: flex;
@@ -87,11 +72,12 @@ a:visited {
         border: 1px solid var(--cor-da-linha);
         border-radius: 10px;
         background-color: var(--cor-fundo-cards);
+        min-width: 110px; /* Garante que o card não esmague no celular */
+        transition: transform 0.2s;
     }
 
-    /* o "scale" é usando para aumentar o item */
-    & .cardCategoria:hover{
-        transform: scale(1.09);
+    & .cardCategoria:hover {
+        transform: scale(1.05);
     }
 
     & .imagemCategoria {
@@ -99,26 +85,29 @@ a:visited {
         height: 85px;
         border: 1px solid rgb(255, 255, 255);
         border-radius: 20%;
+        object-fit: cover;
     }
 
     & .nomeCategoria {
-        font-size: 20px;
+        font-size: 18px;
         background-color: transparent;
+        text-align: center;
     }
 }
 
-/* Div usada para mover os produtos alguns pixeis a fente */
 #Produtos {
     padding-top: 28px;
 }
 
+/* AJUSTE CHAVE: Grid de Produtos */
 #containerProdutos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    /* No PC cria várias colunas, no celular empilha conforme couber */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
     gap: 15px;
-    padding: 20px;
-    height: 230px;
-
+    padding: 20px 0;
+    height: auto; /* IMPORTANTE: Alterado de 230px para auto para não cortar os produtos */
+    width: 100%;
 }
 
 #containerProdutos .cardProduto {
@@ -129,17 +118,25 @@ a:visited {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s;
-
+    transition: transform 0.3s, border 0.2s;
 
     & .imagemProduto {
-        width: 144px;
-        height: 103px;
+        width: 100%; /* Imagem se ajusta ao card */
+        max-width: 144px;
+        height: auto;
+        aspect-ratio: 144/103; /* Mantém a proporção que você definiu */
     }
 }
 
-
 #containerProdutos .cardProduto:hover {
-    transform: translateY(-10px);
-    border: 5px solid red;
+    transform: translateY(-5px);
+    border: 2px solid var(--cor-da-linha); /* Removi o vermelho gritante, mas você pode voltar se preferir */
+}
+
+/* Media Query para telas muito pequenas */
+@media (max-width: 400px) {
+    #containerProdutos {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+    }
 }
