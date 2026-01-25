@@ -29,7 +29,7 @@ async function carregarCatProd (){
         const cardCat = `
             <div class='cardCategoria'>
                 <img class="imagemCategoria" src="${categoria.imagem_url}">
-                <h3 class="tenor-sans-regular">${categoria.nome}</h3>
+                <h3 class="tenor-sans-regular nomeCategoria">${categoria.nome}</h3>
             </div>
         `
 

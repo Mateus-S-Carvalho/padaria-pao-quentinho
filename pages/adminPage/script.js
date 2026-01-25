@@ -216,42 +216,6 @@ async function editarProduto(evento) {
 }
 window.editarProduto = editarProduto
 
-
-
-// Selecionar Produto ou Categoria
-const btnProduto = document.getElementById('btnProduto')
-const btnCategoria = document.getElementById('btnCategoria')
-const menuProduto = document.getElementById('menuProduto')
-const menuCategoria = document.getElementById('menuCategoria')
-let clicado = ''
-btnProduto.addEventListener('click', (event) => {
-    event.stopPropagation();
-
-    if (clicado !== 'produto') {
-        menuProduto.classList.add('menuProduto-ativo');
-        menuCategoria.classList.remove('menuCategoria-ativo');
-
-        btnProduto.disabled = true
-        btnCategoria.disabled = false
-
-        clicado = 'produto'
-    }
-});
-
-btnCategoria.addEventListener('click', (event) => {
-    event.stopPropagation();
-
-    if (clicado !== 'categoria') {
-        menuCategoria.classList.add('menuCategoria-ativo');
-        menuProduto.classList.remove('menuProduto-ativo');
-
-        btnCategoria.disabled = true
-        btnProduto.disabled = false
-
-        clicado = 'categoria'
-    }
-})
-
 // Função das Categorias da API
 
 // função Exibir Categorias
@@ -392,3 +356,39 @@ async function excluirCategoria(id) {
     }
 }
 window.excluirCategoria = excluirCategoria
+
+
+
+// Selecionar Produto ou Categoria
+const btnProduto = document.getElementById('btnProduto')
+const btnCategoria = document.getElementById('btnCategoria')
+const menuProduto = document.getElementById('menuProduto')
+const menuCategoria = document.getElementById('menuCategoria')
+
+function alternarCatProd (tipo) {
+    if (tipo == 'produto') {
+        menuProduto.classList.add('menuAtivo');
+        btnProduto.classList.add('btnAtivo');
+
+        menuCategoria.classList.remove('menuAtivo');
+        btnCategoria.classList.remove('btnAtivo');
+    }else{
+        menuCategoria.classList.add('menuAtivo');
+        btnCategoria.classList.add('btnAtivo');
+
+        menuProduto.classList.remove('menuAtivo')
+        btnProduto.classList.remove('btnAtivo')
+    }
+}
+
+btnProduto.addEventListener('click', (x) => {
+    x.preventDefault();
+    alternarCatProd('produto');
+})
+
+btnCategoria.addEventListener('click', (x) => {
+    x.preventDefault();
+    alternarCatProd('categoria')
+})
+
+alternarCatProd('produto')

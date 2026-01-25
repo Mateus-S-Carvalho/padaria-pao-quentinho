@@ -1,3 +1,11 @@
+:root {
+    --cor-de-fundo: #FFEED7FF;
+    --cor-da-linha: #3D2828;
+    --cor-fundo-cards: #FFFAF3;
+}
+
+/* Confifuração base da pagina, retirando as "leis" pré
+estabelecidas*/
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +14,13 @@
     list-style: none;
 }
 
+/* Estilização do corpo da pagina */
+body {
+    background-color: var(--cor-de-fundo);
+    font-family: "Tenor Sans", sans-serif;
+}
+
+/* estilização de icons usando texto */
 .material-symbols-outlined {
     font-variation-settings:
         'FILL' 0,
@@ -14,73 +29,25 @@
         'opsz' 24
 }
 
+/* Fonte usada no site, sendo a principal */
 .tenor-sans-regular {
     font-family: "Tenor Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
 }
 
-#header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    & #iconSpotify {
-        width: 5vh;
-        height: 5vh;
-    }
-
-    & #barraPesquisa {
-        display: flex;
-        align-items: center;
-        border: 1px solid black
-    }
-
-    & button:hover {
-        cursor: pointer;
-        transform: scale(1.2);
-
-    }
-
-    button:active {
-        color: red;
-        transform: scale(1.2);
-    }
-
-    & button,
-    input {
-        border: none;
-        outline: none;
-        background-color: transparent;
-    }
-
-    & #btnPerfil {
-        display: block;
-        width: 3vh;
-        height: 3vh;
-        background-color: black;
-        border-radius: 10vh;
-    }
-
-    & .juncaoItens {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1vh;
-    }
-}
-
+/* Retira as pré-definições dos links, tirando o azul e o sublinhado */
 a {
     text-decoration: none;
     color: inherit;
 }
 
+/* Retira a estilização de deixar o link roxo quando visualizado */
 a:visited {
     color: inherit;
 }
 
-
-
+/* Estilização do hero, onde sera mostrado a cara do site */
 #hero {
     display: flex;
     align-items: center;
@@ -90,9 +57,25 @@ a:visited {
     background-color: rgb(255, 186, 75);
 }
 
+/* Div usada para alinhar os itens de acordo com o projeto do figma */
+#bodyPr {
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 28px;
+}
+
+/* Estilização usada para Atribuir uma cor para o texto "Categorias" */
+#txtCat {
+    color: var(--cor-da-linha);
+    ;
+}
+
+/* Toda estilização do container e cards de categoria */
 #containerCategorias {
     display: flex;
     gap: 10px;
+    padding-left: 15px;
+    padding-top: 15px;
 
 
     & .cardCategoria {
@@ -100,77 +83,63 @@ a:visited {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        padding: 10px;
-        border: 1px solid black;
-        border-radius: 20%;
+        padding: 5px;
+        border: 1px solid var(--cor-da-linha);
+        border-radius: 10px;
+        background-color: var(--cor-fundo-cards);
+    }
+
+    /* o "scale" é usando para aumentar o item */
+    & .cardCategoria:hover{
+        transform: scale(1.09);
     }
 
     & .imagemCategoria {
         width: 100px;
-        height: 100px;
+        height: 85px;
         border: 1px solid rgb(255, 255, 255);
         border-radius: 20%;
     }
+
+    & .nomeCategoria {
+        font-size: 20px;
+        background-color: transparent;
+    }
+}
+
+/* Div usada para mover os produtos alguns pixeis a fente */
+#Produtos {
+    padding-top: 28px;
 }
 
 #containerProdutos {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    padding: 10px;
-    gap: 10px;
-
-    & .cardProduto {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        border: 1px solid black;
-        padding: 1vh;
-        width: auto;
-        border-radius: 10px;
-        text-align: center;
-
-        & .imagemProduto {
-            width: 10vh;
-            height: 10vh;
-        }
-    }
-
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    height: 230px;
 
 }
 
-#menuFlutuante {
-    position: relative;
-    display: inline;
-}
-
-#menu {
-    display: none;
-    position: absolute;
-    top: 6vh;
-    right: 1vh;
-    width: 20vh;
-    height: auto;
-    background-color: rgb(255, 196, 94);
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-#nomeMenu {
-    margin-top: 1vh;
-    border: none;
-}
-
-.itensMenu {
+#containerProdutos .cardProduto {
+    background-color: var(--cor-fundo-cards);
+    border: 1px solid var(--cor-da-linha);
+    border-radius: 12px;
+    padding: 15px;
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+
+
+    & .imagemProduto {
+        width: 144px;
+        height: 103px;
+    }
 }
 
-.menu-ativo {
-    display: flex !important;
+
+#containerProdutos .cardProduto:hover {
+    transform: translateY(-10px);
+    border: 5px solid red;
 }

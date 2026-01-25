@@ -1,3 +1,10 @@
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
 #telaAdmin,
 #telaAdminCategoria {
     display: flex;
@@ -44,22 +51,23 @@
     }
 }
 
-
-#menuProduto{
+/* Visualização de Produto ou Categoria */
+#menuProduto, #menuCategoria {
     display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-#menuCategoria {
-    display: none;
-}
-
-.menuProduto-ativo {
+.menuAtivo{
     display: flex !important;
 }
-
-.menuCategoria-ativo {
-    display: flex !important;
+.btnAtivo{
+    background-color: transparent !important;
+    color: aliceblue !important;
 }
+
+/* outras coisas */
 
 #mostrarCheckbox {
     display: flex;
@@ -67,7 +75,7 @@
     gap: 2vh;
 }
 
-.divCheckbox{
+.divCheckbox {
     border: 1px solid black;
     border-radius: 30%;
 }
@@ -88,13 +96,13 @@
     height: 5vh;
 }
 
-.CatProdContainer{
+.CatProdContainer {
     display: flex;
     align-items: flex-end;
     width: 100%;
 }
 
-.categoriaNoProduto{
+.categoriaNoProduto {
     padding: 7px;
     display: flex;
     justify-content: center;
@@ -105,7 +113,7 @@
     margin-left: auto;
 }
 
-.imgcatNoProd{
+.imgcatNoProd {
     width: 5vh;
     height: 5vh;
 }

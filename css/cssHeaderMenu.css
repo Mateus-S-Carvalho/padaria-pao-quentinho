@@ -1,3 +1,11 @@
+:root{
+    --marrom-escuro: #563100;
+    --cor-da-linha: #3D2828;
+    --marrom-claro: #AD6300;
+    --cor-de-input-text: #3D282880;
+    --cor-de-botao-header: #FFFBF5E6;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -24,16 +32,33 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 7px;
+    background-color: var(--marrom-claro);
 
-    & #iconSpotify {
-        width: 5vh;
-        height: 5vh;
+    & #iconPadaria {
+        width: 7vh;
+        height: 7vh;
     }
 
     & #barraPesquisa {
         display: flex;
         align-items: center;
-        border: 1px solid black
+        padding-left: 10px;
+        border-radius: 15px;
+        width: 25vh;
+        height: 4vh;
+        border: 1px solid var(--cor-da-linha);
+        background-color: white;
+
+        & button {
+            display: flex;
+            margin-left: auto;
+            color: var(--cor-de-input-text);
+            margin-right: 10px;
+        }
+        & input {
+            font-size: 1.0rem;
+        }
     }
 
     & button:hover {
@@ -45,6 +70,11 @@
     button:active {
         color: red;
         transform: scale(1.2);
+    }
+
+    button{
+        font-size: 1.8rem;
+        color: var(--cor-de-botao-header);
     }
 
     & button,
@@ -79,29 +109,6 @@ a:visited {
     color: inherit;
 }
 
-#menuFlutuante {
-    position: relative;
-    display: inline;
-}
-
-#menu {
-    display: none;
-    position: absolute;
-    top: 6vh;
-    right: 1vh;
-    width: 20vh;
-    height: auto;
-    background-color: rgb(255, 196, 94);
-    flex-direction: column;
-    padding: 10px;
-    border: 1px solid black;
-}
-
-#nomeMenu{
-    margin-top: 1vh;
-    border: none;
-}
-
 .itensMenu {
     display: flex;
     justify-content: center;
@@ -109,8 +116,4 @@ a:visited {
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
-}
-
-.menu-ativo {
-    display: flex !important;
 }
