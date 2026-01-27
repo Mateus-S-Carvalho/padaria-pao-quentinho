@@ -23,9 +23,11 @@ async function checkbox() {
             exibirCheckbox.innerHTML += `
                     <div class='divCheckbox'>
                         <label class='lblCheckbox tenor-sans-regular'>
-                            <img class='imgCheckbox' src="${categoria.imagem_url}">
-                            <input type="radio" name='catSelecionada' class="enviarCheckbox" value=' ${categoria.id} '>
-                            ${categoria.nome}
+                        <input type="radio" name='catSelecionada' class="enviarCheckbox" value=' ${categoria.id} '>
+                            <div class='conteudo'>
+                                <img class='imgCheckbox' src="${categoria.imagem_url}">
+                                ${categoria.nome}
+                            </div>
                         </label>
                     </div>
             `
@@ -65,7 +67,7 @@ const adicionarProduto = async (evento) => {
     }
     catch (error) {
         console.error('erro', error.message);
-        alert('erro', error);
+        alert('erro', error.message);
     }
     finally {
         btn.innerHTML = "Enviar";
@@ -104,10 +106,9 @@ async function exibirProduto() {
             <div class='cardProduto'>
                 <img class= 'imagemProduto' src="${produto.imagem_url}">
                 <div class='juncaoCard'>
-                    <h3 class= 'tenor-sans-regular'>${produto.nome}</h3>
-                    <h4 class= 'tenor-sans-regular'>ID: ${produto.id}</h4>
-                    <label class= 'tenor-sans-regular'>${produto.descricao}</label>
-                    <h3 class= 'tenor-sans-regular'>${parseFloat(produto.valor || 0).toFixed(2)}</h3>
+                    <label class= 'lblNome tenor-sans-regular'>${produto.nome}</label>
+                    <label class= 'lblDescricao tenor-sans-regular'>${produto.descricao}</label>
+                    <label class= 'lblValor tenor-sans-regular'>${parseFloat(produto.valor || 0).toFixed(2)}</label>
                 </div>
                 <div class='CatProdContainer'>
                     <div class='categoriaNoProduto'>
@@ -235,7 +236,7 @@ async function exibirCategorias() {
             exibicaoCat.innerHTML += `
             <div class='cardCategoria'>
                 <img class='imagemCat' src='${categoria.imagem_url}'>
-                <h2 class='tenor-sans-regular'>${categoria.nome}</h2>
+                <h2 class='lblNomeCat tenor-sans-regular'>${categoria.nome}</h2>
                 <div class='botao'>
                     <button type='button' onclick='preencherCampo(${categoria.id})' class= 'material-symbols-outlined'>edit</button>
                     <button type='button' onclick="excluirCategoria(${categoria.id})" class= 'material-symbols-outlined btnDeletar'>delete</button>
@@ -392,3 +393,14 @@ btnCategoria.addEventListener('click', (x) => {
 })
 
 alternarCatProd('produto')
+
+
+
+// Função para a rolagem do mause mover no eixo y
+const horizontalScroll = document.getElementById('mostrarCheckbox');
+
+horizontalScroll.addEventListener ('wheel', (evento) =>{
+    evento.preventDefault();
+
+    horizontalScroll.scrollLeft += evento.deltaY;
+});

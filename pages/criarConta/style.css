@@ -1,0 +1,87 @@
+:root{
+    --cor-de-fundo: #FFEED7FF;
+    --cor-linha: #3D2828;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.tenor-sans-regular {
+    font-family: "Tenor Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--cor-de-fundo);
+    gap: 40px;
+}
+
+#logoEtitulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    & img {
+        width: 40vh;
+        height: auto;
+    }
+}
+    
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Estilo da caixa de texto da senha */
+
+
+#senha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--cor-linha);
+    background-color: white;
+
+    & input {
+        border: none;
+        background-color: transparent;
+        padding: 5px;
+    }
+
+    & button {
+        border: none;
+        background-color: transparent;
+    }
+}
+
+/* Estilo para retirar o formulario após logar e aparer o botão para logar */
+#btnLogar {
+    display: flex;
+}
+
+.ligado{
+    display: flex !important;
+}
+
+.desligado {
+    display: none !important;
+}

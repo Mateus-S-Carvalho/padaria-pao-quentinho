@@ -1,0 +1,101 @@
+:root {
+    --cor-de-fundo: #FFEED7FF;
+    --cor-linha: #3D2828FF;
+    --cor-txt-70: #3D2828B3;
+    --cor-txt-60: #3D282899;
+    --cor-btn: #673B00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+.tenor-sans-regular {
+    font-family: "Tenor Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 48px;
+    background-color: var(--cor-de-fundo);
+}
+
+#logoEtitulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: var(--cor-txt-70);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    color: var(--cor-txt-60);
+
+    & input {
+        width: 350px;
+        height: 50px;
+        border: 1px solid var(--cor-linha);
+        border-radius: 10px;
+        padding-left: 10px;
+        font-size: 14px;
+    }
+
+    & .alinhamento {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        flex-direction: column;
+    }
+
+}
+
+#btnLoginCadastro {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    font-size: 23px;
+    padding: 13px;
+    border: 1px solid var(--cor-linha);
+    border-radius: 10px;
+    background-color: var(--cor-btn);
+    color: white;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: white;
+    color: var(--cor-linha);
+}
+
+
+img {
+    width: 20vh;
+    height: auto;
+}
