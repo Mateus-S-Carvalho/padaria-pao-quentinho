@@ -45,7 +45,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 440px;
+    width: 540px;
     padding: 5px;
     font-size: 25px;
     background-color: var(--fundo-selecao);
@@ -53,7 +53,7 @@ body {
 
     button {
         border: none;
-        width: 215px;
+        width: 265px;
         background-color: transparent;
         border-radius: 10px;
         padding: 5px;
@@ -136,10 +136,11 @@ body {
 
             & label {
                 color: var(--cor-txt-60);
+                font-size: 20px;
             }
 
             & input {
-                width: 350px;
+                width: 550px;
                 height: 50px;
                 border: 1px solid var(--cor-da-linha);
                 border-radius: 10px;
@@ -152,6 +153,11 @@ body {
             justify-content: center;
             flex-direction: column;
 
+            & #lblCat {
+                color: var(--cor-txt-60);
+                font-size: 20px;
+            }
+
             & #mostrarCheckbox {
                 display: flex;
                 align-items: center;
@@ -161,7 +167,7 @@ body {
                 overflow-x: auto;
                 gap: 15px;
                 padding: 10px;
-                width: 360px;
+                width: 560px;
                 height: 100px;
 
                 & .divCheckbox {
@@ -171,6 +177,7 @@ body {
 
                         height: 90px;
                         width: 60px;
+                        color: var(--cor-da-linha);
 
                         & input {
                             display: none;
@@ -212,7 +219,7 @@ body {
 
         & #enviar,
         #btnEnviarCat {
-            width: 300px;
+            width: 500px;
             height: 50px;
             border: 1px solid var(--cor-da-linha);
             border-radius: 10px;
@@ -247,7 +254,7 @@ body {
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                width: 45vh;
+                width: 85vh;
                 max-height: 12vh;
                 background-color: white;
                 border: 1px solid var(--cor-da-linha);
@@ -255,13 +262,13 @@ body {
                 padding: 10px;
             }
 
-            & .imagemCat{
+            & .imagemCat {
                 width: 90px;
                 height: 90px;
                 border-radius: 10px;
             }
 
-            & .lblNomeCat{
+            & .lblNomeCat {
                 font-size: 20px;
                 color: var(--cor-da-linha);
             }
@@ -346,14 +353,97 @@ body {
 
 }
 
+@media screen and (max-width: 600px) {
 
+    /* Ajuste do Card de Produto */
+    #menuProduto #ajustarItens #exibirProduto .cardProduto,
+    #menuCategoria #ajustarItens #exibirCategoria .cardCategoria {
+        width: 95vw !important;
+        height: auto !important;
+        /* Deixa o conteúdo definir a altura */
+        max-height: none !important;
+        display: flex !important;
+        flex-direction: row !important;
+        /* Mantém linha: Imagem | Texto | Botões */
+        align-items: center !important;
+        padding: 10px !important;
+        gap: 10px !important;
+        box-sizing: border-box;
+    }
 
-/* outras coisas */
+    /* 1. Imagem: Fixa e contida */
+    #menuProduto #ajustarItens #exibirProduto .imagemProduto,
+    .imagemCat {
+        width: 70px !important;
+        height: 70px !important;
+        min-width: 70px !important;
+        border-radius: 8px !important;
+        object-fit: cover !important;
+        /* Corta a imagem para caber sem deformar */
+        border: 1px solid #ddd;
+    }
 
+    /* 2. Conteúdo de Texto: Ocupa o centro */
+    .juncaoCard {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        flex-grow: 1 !important;
+        /* Faz o texto "empurrar" os botões para a direita */
+        padding: 0 5px !important;
+        overflow: hidden;
+        /* Evita que textos longos quebrem o card */
+    }
 
+    .lblNome {
+        font-size: 16px !important;
+        font-weight: 600 !important;
+        margin-bottom: 2px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        /* Corta nomes gigantes com "..." */
+    }
 
+    .lblDescricao {
+        font-size: 12px !important;
+        line-height: 1.1;
+        color: var(--cor-txt-60);
+    }
 
-.imgcatNoProd {
-    width: 5vh;
-    height: 5vh;
+    .lblValor {
+        font-size: 18px !important;
+        font-weight: bold;
+        color: var(--cor-marrom-btn-txt) !important;
+        margin-top: 4px;
+    }
+
+    /* 3. Botões: Menores e alinhados */
+    #menuProduto #ajustarItens #exibirProduto .botao,
+    #menuCategoria #ajustarItens #exibirCategoria .botao {
+        display: flex !important;
+        flex-direction: column !important;
+        /* Empilha os botões um sobre o outro */
+        gap: 8px !important;
+        padding: 0 !important;
+        margin-left: auto !important;
+    }
+
+    #menuProduto #ajustarItens #exibirProduto .botao button,
+    #menuCategoria #ajustarItens #exibirCategoria .botao button {
+        font-size: 27px !important;
+        /* Botões menores */
+        padding: 5px !important;
+        margin: 0 !important;
+        /* Um fundo leve para facilitar o clique */
+        border-radius: 5px;
+    }
+
+    /* Ajuste do container pai (fundo do card) */
+    #exibirProduto,
+    #exibirCategoria {
+        padding: 10px !important;
+        width: 98% !important;
+        gap: 10px !important;
+    }
 }
