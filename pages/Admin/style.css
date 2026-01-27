@@ -353,7 +353,41 @@ body {
 
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
+    #select {
+        width: 320px;
+
+        button {
+            width: 150px;
+        }
+    }
+
+
+    #menuProduto {
+
+        & #ajustarItens {
+
+
+            & .inputs {
+
+                & input {
+                    width: 350px;
+                }
+            }
+
+            & #enviar {
+                width: 200px;
+            }
+
+            & #inputChekbox {
+
+
+                & #mostrarCheckbox {
+                    width: 350px;
+                }
+            }
+        }
+    }
 
     /* Ajuste do Card de Produto */
     #menuProduto #ajustarItens #exibirProduto .cardProduto,
