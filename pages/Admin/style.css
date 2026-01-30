@@ -363,7 +363,7 @@ body {
     }
 
 
-    #menuProduto {
+    #menuProduto, #menuCategoria {
 
         & #ajustarItens {
 
@@ -371,19 +371,19 @@ body {
             & .inputs {
 
                 & input {
-                    width: 350px;
+                    width: 350px !important;
                 }
             }
 
-            & #enviar {
-                width: 200px;
+            & #enviar, #btnEnviarCat {
+                width: 230px !important;
             }
 
             & #inputChekbox {
 
 
                 & #mostrarCheckbox {
-                    width: 350px;
+                    width: 350px !important;
                 }
             }
         }
